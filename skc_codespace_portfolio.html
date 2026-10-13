@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SKC CodeSpace — BCA student portfolio">
+<title>SKC CodeSpace | Student Portfolio</title>
+<style>
+:root{--bg:#030914;--panel:#071426;--panel2:#091a30;--blue:#16a8ff;--cyan:#63d5ff;--text:#eaf4ff;--muted:#9bb1c9;--line:#123b60}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:radial-gradient(ellipse at 70% 0%,#08264a 0%,transparent 38%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}.wrap{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#030914eF;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:800;font-size:1.25rem;white-space:nowrap}.brand b{color:var(--blue)}.brand .mark{color:var(--cyan);font-size:1.4rem;margin-right:7px}.links{display:flex;gap:22px;align-items:center}.links a{font-size:.9rem;color:#d4e3f5}.links a:hover{color:var(--cyan)}.menu{display:none;background:transparent;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px 11px;font-size:1.1rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border-radius:10px;border:1px solid var(--blue);background:linear-gradient(135deg,#087de0,#13b5ff);color:white;font-weight:750;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}.btn.ghost{background:transparent;color:var(--cyan)}
+.hero{min-height:500px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:42px;padding:65px 0}.eyebrow{display:inline-block;border:1px solid #145a88;color:var(--cyan);background:#05203a;border-radius:100px;padding:5px 12px;font-size:.82rem;font-weight:700}.hero h1{font-size:clamp(2.5rem,5.5vw,4.3rem);line-height:1.08;letter-spacing:-.04em;margin:18px 0}.gradient{background:linear-gradient(90deg,#fff,#36baff 65%,#86e1ff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:620px;color:var(--muted);font-size:1.05rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.social{display:flex;gap:10px;margin-top:25px}.social a{width:39px;height:39px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--cyan);font-weight:800}.social a:hover{background:#0b2c4a}.hero-art{min-height:320px;position:relative;display:grid;place-items:center}.orb{width:min(320px,80vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 40%,#135b94,#07182b 62%,#030914 72%);border:1px solid #14558a;box-shadow:0 0 70px #007de533,inset 0 0 35px #008bff22;display:grid;place-items:center;position:relative}.code-icon{font-size:clamp(4rem,10vw,7rem);font-weight:900;color:var(--cyan);text-shadow:0 0 35px #00aaff88}.float{position:absolute;background:#07182b;border:1px solid #15558b;border-radius:12px;padding:10px 14px;color:#d9f4ff;box-shadow:0 12px 30px #0006;font-size:.9rem}.float.one{top:12%;right:-2%}.float.two{bottom:12%;left:-2%}
+section{padding:70px 0;border-top:1px solid #0d2b46}.section-label{color:var(--cyan);font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.section-title{font-size:clamp(1.8rem,3vw,2.5rem);margin:4px 0 24px;line-height:1.2}.muted{color:var(--muted)}.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:25px}.card{background:linear-gradient(145deg,#08192c,#050e1b);border:1px solid var(--line);border-radius:17px;padding:25px}.card h3{margin:0 0 12px}.info{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:22px}.info div{background:#07172a;border:1px solid #102e4c;border-radius:10px;padding:13px}.info small{display:block;color:var(--muted)}.info strong{font-size:.94rem;overflow-wrap:anywhere}.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.skill{padding:20px 12px;text-align:center;border:1px solid var(--line);border-radius:14px;background:var(--panel);transition:.2s}.skill:hover,.project:hover{transform:translateY(-4px);border-color:var(--blue)}.skill .symbol{font-size:1.8rem;color:var(--cyan);font-weight:900}.skill h3{font-size:.95rem;margin:5px 0}.skill p{font-size:.78rem;color:var(--muted);margin:0}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.project{background:linear-gradient(145deg,#091b30,#050e1a);border:1px solid var(--line);border-radius:15px;padding:22px;transition:.2s}.project .p-icon{width:48px;height:48px;border-radius:12px;background:#0b2a48;color:var(--cyan);display:grid;place-items:center;font-size:1.45rem;margin-bottom:16px}.project h3{margin:0 0 8px}.project p{color:var(--muted);font-size:.92rem}.tags{display:flex;flex-wrap:wrap;gap:7px}.tags span{font-size:.73rem;border:1px solid #17456c;border-radius:50px;padding:3px 9px;color:#b8e9ff}.timeline{border-left:2px solid #1266a1;margin-left:7px;padding-left:23px}.entry{position:relative;margin-bottom:24px}.entry:before{content:"";position:absolute;width:11px;height:11px;border-radius:50%;background:var(--blue);left:-30px;top:7px;box-shadow:0 0 0 5px #0a2945}.entry small{color:var(--cyan)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.contact-list{display:grid;gap:12px;margin-top:22px}.contact-list a,.contact-list div{color:#d6e7f8}.contact-list b{color:var(--cyan);margin-right:10px}.form{display:grid;gap:12px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}input,textarea{width:100%;background:#030d19;color:var(--text);border:1px solid #17456c;border-radius:9px;padding:13px;font:inherit;outline:none}input:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #008dff20}textarea{min-height:130px;resize:vertical}.notice{color:var(--cyan);font-size:.88rem;min-height:22px}footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.88rem}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:800px){.links{display:none;position:absolute;top:72px;left:0;right:0;padding:20px 5%;background:#030914;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.links.open{display:flex}.menu{display:block}.nav .btn{display:none}.hero{grid-template-columns:1fr;padding:55px 0 45px;gap:15px}.hero-art{min-height:280px}.about-grid,.contact-grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.projects{grid-template-columns:1fr}.info{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.hero h1{font-size:2.7rem}.card{padding:20px}section{padding:55px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#home"><span class="mark">&lt;/&gt;</span><b>SKC</b> CodeSpace</a>
+  <nav class="links" id="navLinks"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+  <a class="btn ghost" href="#contact">Let's Connect ↗</a>
+  <button class="menu" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+</div></header>
+<main>
+<section class="wrap hero" id="home" style="border-top:0">
+  <div><span class="eyebrow">BCA STUDENT · FUTURE DEVELOPER</span>
+    <h1>Hello, I'm<br><span class="gradient">Shivam Kumar</span></h1>
+    <p>Welcome to SKC CodeSpace — my personal portfolio. I'm a BCA student exploring technology, programming, and web development. I love learning new skills and turning ideas into useful digital projects.</p>
+    <div class="actions"><a class="btn" href="#projects">⌘ View My Projects</a><a class="btn ghost" href="#contact">✉ Contact Me</a></div>
+    <div class="social"><a href="#contact" aria-label="GitHub">GH</a><a href="#contact" aria-label="LinkedIn">in</a><a href="#contact" aria-label="Instagram">◎</a></div>
+  </div>
+  <div class="hero-art"><div class="orb"><div class="code-icon">&lt;/&gt;</div></div><div class="float one">⚡ Keep Learning</div><div class="float two">{"code": "create"}</div></div>
+</section>
+<section id="about"><div class="wrap"><div class="section-label">A little introduction</div><h2 class="section-title">About Me</h2>
+  <div class="about-grid"><div class="card"><h3>Who I Am</h3><p class="muted">I'm Shivam, a Bachelor of Computer Applications (BCA) student with an interest in computers, coding, and creative problem-solving. I'm building my skills step by step through practice, coursework, and personal projects.</p><p class="muted">My goal is to grow into a capable developer and keep creating things that make a difference.</p></div>
+  <div class="card"><h3>Quick Info</h3><div class="info"><div><small>Name</small><strong>Shivam Kumar</strong></div><div><small>Course</small><strong>BCA</strong></div><div><small>Focus</small><strong>Web Development</strong></div><div><small>Currently</small><strong>Learning & building</strong></div></div></div></div>
+</div></section>
+<section id="skills"><div class="wrap"><div class="section-label">What I'm learning</div><h2 class="section-title">Technical Skills</h2><p class="muted">Replace or update these with the technologies you actually know.</p>
+<div class="skills">
+<div class="skill"><div class="symbol">C</div><h3>C Programming</h3><p>Fundamentals</p></div>
+<div class="skill"><div class="symbol">C++</div><h3>C++</h3><p>Programming basics</p></div>
+<div class="skill"><div class="symbol">⌘</div><h3>HTML</h3><p>Web structure</p></div>
+<div class="skill"><div class="symbol">#</div><h3>CSS</h3><p>Web styling</p></div>
+<div class="skill"><div class="symbol">JS</div><h3>JavaScript</h3><p>Interactivity</p></div>
+<div class="skill"><div class="symbol">▣</div><h3>MS Office</h3><p>Productivity</p></div>
+<div class="skill"><div class="symbol">Git</div><h3>Git / GitHub</h3><p>Version control</p></div>
+<div class="skill"><div class="symbol">⌘</div><h3>Problem Solving</h3><p>Keep practicing</p></div>
+</div></div></section>
+<section id="projects"><div class="wrap"><div class="section-label">Things I've worked on</div><h2 class="section-title">Featured Projects</h2><div class="projects">
+<article class="project"><div class="p-icon">▤</div><h3>Student Record System</h3><p>A sample project concept to organize student details and academic records.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></article>
+<article class="project"><div class="p-icon">▦</div><h3>Calculator</h3><p>A simple, responsive calculator interface for practicing logic and JavaScript.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></article>
+<article class="project"><div class="p-icon">▣</div><h3>Personal Portfolio</h3><p>This portfolio website introduces me, my learning journey, and my future work.</p><div class="tags"><span>Responsive</span><span>Web Design</span></div></article>
+</div><p class="muted" style="font-size:.85rem;margin-top:15px">Note: These are starter examples. Update them to match projects you have actually completed.</p></div></section>
+<section id="education"><div class="wrap"><div class="section-label">My learning journey</div><h2 class="section-title">Education</h2><div class="card timeline">
+<div class="entry"><small>Currently studying</small><h3>Bachelor of Computer Applications (BCA)</h3><p class="muted">College name: add your college · Expected graduation: add year</p></div>
+<div class="entry"><small>Previous qualification</small><h3>Class 12</h3><p class="muted">School name and passing year: add your details</p></div>
+<div class="entry"><small>Earlier education</small><h3>Class 10</h3><p class="muted">School name and passing year: add your details</p></div>
+</div></div></section>
+<section id="contact"><div class="wrap"><div class="section-label">Have an idea?</div><h2 class="section-title">Let's Connect</h2><div class="contact-grid">
+<div class="card"><h3>Get in touch</h3><p class="muted">Interested in a project, collaboration, or just want to say hello? Use the form or add your preferred contact details here.</p><div class="contact-list"><div><b>✉</b> Add your email address</div><div><b>⌖</b> India</div><div><b>⌘</b> Open to learning opportunities</div></div></div>
+<div class="card"><form class="form" id="contactForm"><div class="form-row"><input name="name" placeholder="Your name" aria-label="Your name" required><input name="email" type="email" placeholder="Your email" aria-label="Your email" required></div><input name="subject" placeholder="Subject" aria-label="Subject"><textarea name="message" placeholder="Your message" aria-label="Your message" required></textarea><button class="btn" type="submit">Prepare Email ↗</button><p class="notice" id="formNotice" aria-live="polite">This form opens your email app; it does not store messages.</p></form></div>
+</div></div></section>
+</main>
+<footer><div class="wrap foot"><span><strong style="color:var(--cyan)">SKC</strong> CodeSpace · Built with curiosity.</span><span>© <span id="year"></span> SKC CodeSpace · Dream → Code → Grow</span></div></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.currentTarget);const subject=encodeURIComponent(f.get('subject')||'Message from SKC CodeSpace portfolio');const body=encodeURIComponent(`Name: ${f.get('name')}\nEmail: ${f.get('email')}\n\n${f.get('message')}`);document.getElementById('formNotice').textContent='Opening your email app… Add your email address in the code to receive messages.';window.location.href=`mailto:YOUR_EMAIL@example.com?subject=${subject}&body=${body}`;});
+</script>
+</body>
+</html>
